@@ -1,38 +1,306 @@
-.App {
+:root {
+  /* Color Palette */
+  --crimson-red: #c13a3a;
+  --deep-black: #1d1d1d;
+  --bright-white: #ffffff;
+  --vibrant-orange: #f45b28;
+  --steel-gray: #585858;
+  --light-beige: #f7f2e7;
+  --golden-yellow: #f2c94c;
+  --charcoal-gray: #2c2c2c;
+  --royal-purple: #7851a9;
+  --sky-blue: #87ceeb;
+  --forest-green: #228b22;
+}
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: var(--charcoal-gray); /* Main Website Background */
+  color: var(--bright-white); /* Primary Text */
+  background-image: url('/Users/razvan/Desktop/unmatched background.png'), linear-gradient(rgba(44, 44, 44, 0.8), rgba(44, 44, 44, 0.8));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+}
+
+.app {
+  text-align: center;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.game-title {
+  font-size: 4rem;
+  color: var(--golden-yellow); /* Primary Header Text */
+  margin: 0;
+}
+
+.app-name {
+  font-size: 2rem;
+  color: var(--bright-white); /* Primary Text */
+  margin: 0.5rem 0 2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: var(--vibrant-orange); /* Default Button Background */
+  color: var(--bright-white); /* Button Text */
+}
+
+.primary-btn:hover {
+  background-color: var(--crimson-red); /* Hover Button Background */
+}
+
+.secondary-btn {
+  background-color: var(--steel-gray);
+  color: var(--bright-white);
+}
+
+.secondary-btn:hover {
+  background-color: var(--light-beige);
+  color: var(--deep-black);
+}
+
+.player-selection {
+  margin-top: 2rem;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: var(--steel-gray); /* Secondary Text/Subtitles */
+}
+
+.player-input {
+  width: 4rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+  border: 2px solid var(--steel-gray);
+  border-radius: 5px;
+}
+
+.player-input:focus {
+  outline: none;
+  border-color: var(--vibrant-orange);
+}
+
+/* Add to the existing styles */
+.choose-players {
+  margin-top: 2rem;
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.player-option {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--steel-gray);
+  border-radius: 5px;
+  color: var(--bright-white);
+  background-color: var(--charcoal-gray);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.player-option input {
+  display: none;
+}
+
+.player-option.selected {
+  background-color: var(--vibrant-orange);
+  border-color: var(--crimson-red);
+  color: var(--bright-white);
+}
+
+.player-option:hover {
+  background-color: var(--steel-gray);
+}
+
+.player-option.selected:hover {
+  background-color: var(--crimson-red);
+}
+
+.continue-season {
+  margin-top: 2rem;
+}
+
+.season-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.season-item {
+  padding: 1rem;
+  background-color: var(--steel-gray);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.season-item:hover {
+  background-color: var(--vibrant-orange);
+}
+
+.season-item h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--bright-white);
+}
+
+.season-item p {
+  margin: 0.2rem 0;
+  color: var(--bright-white);
+}
+
+.hero-assignment {
+  margin: 1rem 0;
+}
+
+.hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.hero-item {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--bright-white);
+  padding: 0.5rem;
+  background-color: var(--steel-gray);
+  border-radius: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-item:hover {
+  background-color: var(--vibrant-orange);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.end-game {
+  margin: 2rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.player-results {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.player-result {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0.5rem;
+  background-color: var(--steel-gray);
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.player-result select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--vibrant-orange);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player-result span {
+  font-size: 1.2rem;
+  color: var(--bright-white);
+}
+
+.player-result select:hover {
+  background-color: var(--vibrant-orange);
+  color: var(--deep-black);
+}
+
+.continue-season {
+  margin: 2rem;
+}
+
+.season-list {
+  list-style: none;
+  padding: 0;
+}
+
+.season-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: var(--steel-gray);
+  border-radius: 5px;
+}
+
+.season-item span {
+  font-size: 1.2rem;
+  color: var(--bright-white);
+}
+
+.home-btn {
+  margin-top: 2rem;
+  background-color: var(--vibrant-orange);
+  color: var(--deep-black);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background-color: var(--deep-black);
+  color: var(--vibrant-orange);
+}
+
+.footer-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: var(--steel-gray);
+  color: var(--bright-white);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.footer-tagline {
+  font-family: "Anton", sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--vibrant-orange);
 }
