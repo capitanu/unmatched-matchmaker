@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+git import React, { useEffect, useState } from 'react';
 import { InstagramEmbed } from 'react-social-media-embed';
 
 export default function Instagram() {
